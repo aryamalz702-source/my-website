@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title> تهنئة العيد </title>
+    <style>
+        body {
+     text-align: center;
+     background-color: #222;
+     color: white;
+     font-family: Arial;
+        }
+    h1 {
+        margin-top: 100px;
+        font-size: 50px;
+    }
+    button{
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    }
+    .confetti{
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: red;
+        top: 0;
+        animation: fall 5s linear forwards;
+    }
+    @keyframes fall{
+        to {
+             transform: translateY(100vh) rotate(720deg);
+              opacity:0; }
+    }
+    </style>
+    </head>
+    <body>
+    <h1>  !عيدكم مبارك </h1>
+    <h1> كل عام وانتم بخير </h1>
+    <button onclick="startConfetti()"> اضغط للاحتفال </button>
+    
+    <br><br>
+    <a href="Home.html"><button> العوده للصفحه الرئيسيه </button></a>
+    <script>
+        function startConfetti() {
+            for (let i = 0; i< 100; i++){
+                let c = document.createElement("div");
+                c.classList.add("confetti");
+                c.style.left = Math.random() * window.innerWidth + "px";
+                c.style.backgroundColor = `hsl(${Math.random()* 360},100%, 50%)`;
+                c.style.animationDuration = (Math.random()* 3 + 2) + "s";
+                document.body.appendChild(c);
+                setTimeout(() => c.remove(), 5000);
+            }
+        }
+        </script>
+        </body>
+    </html>
