@@ -11,20 +11,20 @@
      font-family: Arial;
         }
     h1 {
-        margin-top: 100px;
-        font-size: 50px;
+        margin-top: 100vh;
+        font-size: 50vw;
     }
     button{
-    padding: 15px;
-    font-size: 20px;
+    padding: 15vw;
+    font-size: 20vw;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     }
     .confetti{
         position: absolute;
-        width: 10px;
-        height: 10px;
+        width: 10vw;
+        height: 10vw;
         background-color: red;
         top: 0;
         animation: fall 5s linear forwards;
@@ -33,6 +33,11 @@
         to {
              transform: translateY(100vh) rotate(720deg);
               opacity:0; }
+    }
+    @media only screen and (max-width: 400px){
+        h1 {font-size: 12vw; }
+        button { font-size: 6vw; padding: 4vw 6vw; }
+        .confetti { width: 3vw height: 3vw; }
     }
     </style>
     </head>
